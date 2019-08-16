@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Boot CSS */
+html,body{
+    height: 100%;
+}
+body{
+    overflow-x: hidden;
+}
+img{
+    width: 100%;
+    max-width: 400px;
+    max-height: 350px;
+}
+
+.w33{
+    width: 33.3%;
+    padding: 0 10px;
+}
+
+.w50{
+  padding: 0 1%;
+  width: 50%;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+
+/* EstilizaÃ§ÃĢo do site */
+
+.formulario{
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 15%;
+  text-align: center;
+}
+
+.form{
+  margin-top: 30%;
+}
+
+.formulario hr{
+  width: 80%;
+  height: 5px;
+  background: #ADADAE;
+  border-radius: 20px;
+  margin-top: -10px;
+  margin-left: 10%;
+  margin-bottom: 15%;
+}
+
+.box{
+  margin-bottom: 10%;
+}
+
+div.formulario input[type=text]{
+  margin-bottom: 10%;
+  background: #ECEFF1;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+  border-bottom-color: rgb(92, 92, 95);
+  width: 100%;
+  height: 30px;
+  text-indent: 10px; 
+}
+div.formulario input[readonly]{
+  border-bottom-color: #B5B5B8;
+}
+div.formulario input[type=text]:hover{
+  border-bottom-color: rgb(88, 86, 86);
+}
+div.formulario input[type=text]:focus{
+  border-bottom-color: #2979FF;
+}
+
+div.formulario p{
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+input[type=submit],[type=reset]{
+  border: none;
+  border-radius: 4px;
+}
+
+div .botoes input[type=submit]{
+  margin-top: 10px;
+  width: 100%;
+  height: 30px;
+  font-size: 13px;
+  color: white;
+}
+
+.new{
+  background: #569CD6;
+}
+.new:hover{
+  background: rgb(109, 170, 219);
+}
+.new:hover{
+  background: rgb(15, 124, 212);
+}
+
+.save{
+  background: #64A77A;
+}
+.save:hover{
+  background: rgb(120, 167, 135);
+}
+.save:focus{
+  background: rgb(67, 170, 101);
+}
+
+div.two-buttons input[type=submit],[type=reset]{
+  margin-top: 10px;
+  width: 98%;
+  height: 30px;
+  font-size: 13px;
+  color: white;
+  font-weight: bold;
+}
+
+div.cancel input[type=submit]{
+  background: rgb(235, 205, 15);
+}
+
+div.cancel input[type=submit]:hover{
+  background: rgb(231, 211, 80);
+}
+
+div.cancel input[type=submit]:focus{
+  background: rgb(243, 211, 6);
+}
+
+div.clear input[type=reset]{
+  background: #9CDCFE;
+}
+div.clear input[type=reset]:hover{
+  background: rgba(103, 184, 231, 0.418);
+}
+
+div.clear input[type=reset]:focus{
+  background: rgba(46, 132, 243, 0.418);
+}
+
+.livro ons-button{
+  margin-top: 20px;
+}
+.inicial ons-button{
+  margin-top: 20px;
+}
+div #pratilheira select{
+  margin-top: 10px;
+  border: 0.5px solid #888889;
+  padding: 10px;
+  border-radius: 5px;
+  background: #ECEFF1;
+  margin-bottom: 10px;
+}
+div #pratilheira h1{
+  text-align: center;
+  font-weight: bold;
+}
+
+#titulo{
+  text-align: center;
+}
+
+div .foto #caminho{
+  margin-top: 10%;
+  width: 30%;
+  height: 50%;
+}
+div .foto i{
+  font-size: 20px;
+  padding: 10px;
+}
+#imagem{
+  width: 200px;
+  height: 200px;
+}

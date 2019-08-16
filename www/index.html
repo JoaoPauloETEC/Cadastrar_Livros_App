@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+  <!-- Scripts -->
+  <script src="components/jquery.js"></script>
+  <script src="components/acao.js"></script>
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <!-- Links -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    // Page init event
+    document.addEventListener('init', function(event) {
+      var page = event.target;
+
+      if(page.matches('#first-page')) 
+      {
+        page.querySelector('#push-button').onclick = function() 
+        {
+          document.querySelector('#navigator').pushPage('page2.html');
+        };
+
+      }else if(page.matches('#second-page')) 
+      {
+        page.querySelector('#pop-button').onclick = function() 
+        {
+          document.querySelector('#navigator').popPage();
+        };
+        listarLivros();
+      }
+    });
+
+    if (ons.platform.isIPhoneX()) {
+      document.documentElement.setAttribute('onsflag-iphonex-portrait', '');
+      document.documentElement.setAttribute('onsflag-iphonex-landscape', '');
+    }
+  </script>
+</head>
+<body>
+  <ons-navigator id="navigator" page="page1.html"></ons-navigator>
+
+  <ons-template id="page1.html"> <!-- Pagina -->
+    <ons-page id="first-page"> <!-- Conteudo -->
+
+        <div class="formulario"> <!-- Center -->
+          <ons-toolbar id="barra"> <!-- Barra -->
+            <div class="center">Livraria Online</div>
+          </ons-toolbar> <!-- Barra -->
+          
+            <div class="form">
+              <div class="box"> 
+                <h1>Adicionar Livro</h1>
+
+                <hr>
+
+                <p>Titulo do Livro</p>
+                <input type="text" id="livro" placeholder="Livro..." readonly>
+
+                <p>Nome do autor</p>
+                <input type="text" id="autor" placeholder="Autor..." readonly>
+
+                <p>Ano de publicação</p>
+                <input type="text" id="ano" placeholder="Ano..." readonly>
+
+                <p>Escolha uma imagem da galeria</p>
+                <input name="foto" type="file" id="caminho">
+
+                <div class="foto">
+                  <ons-button id="caminho"><i class="zmdi zmdi-camera"></i></ons-button>
+                </div>
+              </div>
+
+              <div class="botoes">
+                <div class="w50 left">
+                  <input type="submit" class="new" value="Novo">
+                </div>
+                <div class="w50 left">
+                  <input type="submit" class="save" value="Salvar" id="save">
+                </div>
+                <div class="clear"></div>
+              </div>
+
+              <div class="two-buttons">
+                <div class="cancel">
+                  <input type="submit" value="Cancelar">
+                </div>
+              </div>
+
+              <div class="livro">
+                <ons-button id="push-button">Visualizar livros</ons-button>
+              </div>
+            </div>
+          </div> <!-- Center -->
+
+        </ons-page> <!-- Conteudo -->
+      </ons-template>
+
+      <ons-template id="page2.html">
+        <ons-page id="second-page">
+
+          <div class="formulario"> <!-- Center -->
+
+            <ons-toolbar>
+              <!--div class="left"><ons-back-button>Page 1</ons-back-button></div-->
+              <div id="titulo" class="center">Livraria</div>
+            </ons-toolbar>
+
+            <div class="form">
+              <div id="pratilheira">
+                <h1>Pratilheira</h1>
+                <select id="lista"> 
+                  <!--option selected disabled>Escolha um livro da lista</option-->
+                <select>
+              </div>
+
+              <div class=""> 
+                <p>Código do Livro</p>
+                <input type="text" id="codigo" placeholder="Código..." readonly>
+
+                <p>Titulo do Livro</p>
+                <input type="text" id="livro1" placeholder="Livro..." readonly>
+
+                <p>Nome do autor</p>
+                <input type="text" id="autor1" placeholder="Autor..." readonly>
+
+                <p>Ano de publicação</p>
+                <input type="text" id="ano1" placeholder="Ano..." readonly>
+
+                <p>Imagem</p>
+                <img id="imagem">
+
+                <p>Escolha uma imagem da galeria</p>
+                <input name="foto1" type="file" id="caminho1">
+              </div>
+
+              <div style="margin-top: 30px;">
+                <ons-button id="update" style="background-color: #5ACF4E; margin: 5px;"><i class="zmdi zmdi-check-circle"></i></ons-button>
+
+                <ons-button id="editar" style="background-color: #F0C120; margin: 5px;"><i class="zmdi zmdi-edit"></i></ons-button>
+
+                <ons-button id="delete" style="background-color: #DC4C4C; margin: 5px;"><i class="zmdi zmdi-delete"></i></ons-button>
+
+                <ons-button id="cancelar" style="background-color: #8C8C8C; margin: 5px;" ><i class="zmdi zmdi-close-circle"></i></ons-button>
+              </div>
+              <div class="inicial">
+                <ons-button id="pop-button">Voltar</ons-button>
+              </div>
+            </div>
+          </div> <!-- Center -->
+
+    </ons-page>
+  </ons-template>
+</body>
+</html>
